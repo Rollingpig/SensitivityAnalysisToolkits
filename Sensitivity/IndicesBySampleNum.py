@@ -57,7 +57,7 @@ class IndicesBySampleNum:
         # r2_train
         y = mean_r2[:, -2]
         axe_r2.plot(x, y, color=self.input_colors[0], linestyle='-', linewidth=1,
-                    label='R2 Training', marker=self.input_markers[0], markersize=4, )
+                    label='Training', marker=self.input_markers[0], markersize=4, )
         y1s = bottom_r2[:, -2]
         y2s = upper_r2[:, -2]
         axe_r2.fill_between(x=x, y1=y1s, y2=y2s,
@@ -66,7 +66,7 @@ class IndicesBySampleNum:
         # r2_validation
         y = mean_r2[:, -1]
         axe_r2.plot(x, y, color=self.input_colors[1], linestyle='-', linewidth=1,
-                    label='R2 Validation', marker=self.input_markers[1], markersize=4, )
+                    label='Validation', marker=self.input_markers[1], markersize=4, )
         y1s = bottom_r2[:, -1]
         y2s = upper_r2[:, -1]
         axe_r2.fill_between(x=x, y1=y1s, y2=y2s,
@@ -77,7 +77,6 @@ class IndicesBySampleNum:
         axe.set_xticks(x)
         axe.set_xticklabels(self.sample_num_list)
         axe.set_xlabel('number of samples')
-        axe.set_ylabel(self.label_y_axis)
 
         axe_r2.set_xlim([math.log(self.sample_num_list[0]), math.log(self.sample_num_list[-1])])
         axe_r2.set_ylim([0, None])

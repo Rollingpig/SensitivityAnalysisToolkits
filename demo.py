@@ -22,17 +22,17 @@ if __name__ == '__main__':
     }
 
     print('run SRC')
-    SRC(**{**param, 'model': LinearRegression()}).run(ax[1][0], ax[0][0])
+    SRC(**param, model=LinearRegression()).run(ax[1][0], ax[0][0])
     ax[0][0].set_ylim([0, 1.1])
     ax[0][0].set_title('Squared SRC')
 
     print('run Permutation')
-    Permutation(**{**param, 'model': GradientBoostingRegressor()}).run(ax[1][1], ax[0][1])
+    Permutation(**param, model=GradientBoostingRegressor()).run(ax[1][1], ax[0][1])
     ax[0][1].set_ylim([0, 1.1])
     ax[0][1].set_title('GBR-based Permutation')
 
     print('run SHAP')
-    Shap(**{**param, 'model': GradientBoostingRegressor()}).run(ax[1][2], ax[0][2])
+    Shap(**param, model=GradientBoostingRegressor()).run(ax[1][2], ax[0][2])
     ax[1][2].legend(loc=(1.2, 0))
     ax[0][2].set_ylim([0, 1.1])
     ax[0][2].set_title('GBR-based Squared SHAP')
